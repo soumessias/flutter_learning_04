@@ -1,16 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:app_04/pages/product_detail_page.dart';
 import 'package:app_04/utils/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/product.dart';
 
 class ProductItem extends StatelessWidget {
-  final Product product;
-  const ProductItem({super.key, required this.product});
-
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<Product>(context);
     return GestureDetector(
       onTap: () {
         Navigator.of(context).pushNamed(
@@ -79,10 +77,16 @@ class ProductItem extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
+                              onPressed: () {
+                                product.toggleFavorite();
+                              },
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              icon: Icon(
                                 Icons.favorite,
-                                color: Colors.white,
+                                color: product.isFavorite
+                                    ? Colors.redAccent
+                                    : Colors.white,
                                 size: 25,
                               ),
                             ),
@@ -105,6 +109,8 @@ class ProductItem extends StatelessWidget {
                               ),
                             ),
                             IconButton(
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
                               onPressed: () {},
                               icon: const Icon(
                                 Icons.shopping_cart,

@@ -8,6 +8,8 @@ In it I learned about:
 * How to use ListView.separated
 * How to add a font family in the entire project with a new font
 * How to navigate back from a Screen without using AppBar (using Navigator.pop())
+* How to use Provider to easily deal with states in different components
+* How to use PopUpMenuButton and Items
 
 Some screenshots:
 
