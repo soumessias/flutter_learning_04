@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:app_04/models/cart.dart';
 import 'package:app_04/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +10,7 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context);
+    final cart = Provider.of<Cart>(context, listen: false);
     return GestureDetector(
       onTap: () {
         Navigator.of(context).pushNamed(
@@ -93,7 +95,7 @@ class ProductItem extends StatelessWidget {
                             SizedBox(
                               width: 200,
                               child: Text(
-                                product.title,
+                                product.name,
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                   color: Colors.white,
@@ -111,7 +113,9 @@ class ProductItem extends StatelessWidget {
                             IconButton(
                               splashColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              onPressed: () {},
+                              onPressed: () {
+                                cart.addItem(product);
+                              },
                               icon: const Icon(
                                 Icons.shopping_cart,
                                 color: Colors.white,

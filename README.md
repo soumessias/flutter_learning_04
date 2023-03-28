@@ -10,6 +10,7 @@ In it I learned about:
 * How to navigate back from a Screen without using AppBar (using Navigator.pop())
 * How to use Provider to easily deal with states in different components
 * How to use PopUpMenuButton and Items
+* How to use the Badges Package to create a badge on the shopping cart Icon
 
 Some screenshots:
 

@@ -1,8 +1,10 @@
 import 'package:app_04/components/product_item.dart';
+import 'package:app_04/models/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/product.dart';
 import '../models/product_list.dart';
+import 'package:badges/badges.dart' as badges;
 
 class ProductGrid extends StatelessWidget {
   const ProductGrid({super.key});
@@ -21,6 +23,7 @@ class ProductGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = Provider.of<ProductList>(context);
     final List<Product> loadedProducts = provider.items;
+    final cart = Provider.of<Cart>(context);
     return Column(
       children: [
         Stack(
@@ -42,32 +45,62 @@ class ProductGrid extends StatelessWidget {
             ),
             Container(
               width: double.infinity,
+              padding: EdgeInsets.only(
+                right: 20,
+              ),
               height: 95,
-              alignment: Alignment.bottomRight,
-              child: PopupMenuButton(
-                splashRadius: 50,
-                icon: const Icon(
-                  Icons.more_vert,
-                  color: Colors.white,
-                  size: 35,
-                ),
-                itemBuilder: (_) => [
-                  PopupMenuItem(
-                    value: true,
-                    child: menuItem("Somente Favoritos"),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  PopupMenuButton(
+                    splashRadius: 50,
+                    icon: const Icon(
+                      Icons.more_vert,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+                    itemBuilder: (_) => [
+                      PopupMenuItem(
+                        value: true,
+                        child: menuItem("Somente Favoritos"),
+                      ),
+                      PopupMenuItem(
+                        value: false,
+                        child: menuItem("Todos"),
+                      ),
+                    ],
+                    onSelected: (bool selected) {
+                      if (selected) {
+                        provider.showFavoriteOnly();
+                      } else {
+                        provider.showAll();
+                      }
+                    },
                   ),
-                  PopupMenuItem(
-                    value: false,
-                    child: menuItem("Todos"),
-                  )
+                  badges.Badge(
+                    badgeContent: Text(
+                      cart.itemsCount.toString(),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Pirulen',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    badgeStyle: const badges.BadgeStyle(
+                      badgeColor: Colors.redAccent,
+                      padding: EdgeInsets.all(7),
+                    ),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.shopping_cart,
+                        size: 27,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ],
-                onSelected: (bool selected) {
-                  if (selected) {
-                    provider.showFavoriteOnly();
-                  } else {
-                    provider.showAll();
-                  }
-                },
               ),
             ),
           ],

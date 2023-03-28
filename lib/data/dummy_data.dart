@@ -3,7 +3,7 @@ import '../models/product.dart';
 final dummyProducts = [
   Product(
     id: 'p1',
-    title: 'WHEY PROTEIN CONCENTRADO (1KG)',
+    name: 'WHEY PROTEIN CONCENTRADO (1KG)',
     description:
         'Whey Protein Growth é a proteína ideal para quem treina hipertrofia e quer ganhar massa muscular.',
     price: 99.00,
@@ -12,7 +12,7 @@ final dummyProducts = [
   ),
   Product(
     id: 'p2',
-    title: 'CREATINA MONOHIDRATADA 100G',
+    name: 'CREATINA MONOHIDRATADA 100G',
     description:
         'Este produto é uma das principais escolhas dos atletas mais famosos e de quem está investindo na hipertrofia. Você consegue ganhar massa muscular e, ao mesmo tempo, garantir um ganho de força sem igual.',
     price: 40.50,
@@ -21,7 +21,7 @@ final dummyProducts = [
   ),
   Product(
     id: 'p3',
-    title: 'BETA-ALANINA EM PÓ',
+    name: 'BETA-ALANINA EM PÓ',
     description:
         'A beta-alanine é um aminoácido não essencial, sendo o único do tipo beta produzido naturalmente pelo nosso organismo. É utilizado como pré treino e produz sensação de formigamento.',
     price: 63.00,
@@ -30,7 +30,7 @@ final dummyProducts = [
   ),
   Product(
     id: 'p4',
-    title: 'PASTA DE AMENDOIM SABOR BEIJINHO 500G',
+    name: 'PASTA DE AMENDOIM SABOR BEIJINHO 500G',
     description:
         'A Pasta de Amendoim Beijinho é um alimento energético, devido ao amendoim, que possui gorduras, carboidratos e proteínas (sendo fonte de aminoácidos essenciais como leucina, isoleucina, valina), vitaminas (B e E), minerais (zinco, potássio e fósforo), entre outros nutrientes essenciais para o bom funcionamento do organismo.',
     price: 25.20,
@@ -39,7 +39,7 @@ final dummyProducts = [
   ),
   Product(
     id: 'p5',
-    title: 'MULTIVITAMÍNICO (120 CÁPS)',
+    name: 'MULTIVITAMÍNICO (120 CÁPS)',
     description:
         'Fonte de nutrientes indispensáveis para uma rotina saudável, o multivitamínico Growth Supplements não pode sair da sua mochila de treino. Com uma cápsula por dia, você garante uma boa dose de vitaminas e minerais, nutrientes importantes para o bom funcionamento do organismo.',
     price: 36.90,

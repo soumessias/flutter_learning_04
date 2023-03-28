@@ -1,3 +1,4 @@
+import 'package:app_04/models/cart.dart';
 import 'package:app_04/pages/product_detail_page.dart';
 import 'package:app_04/utils/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +15,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => ProductList(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => ProductList(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => Cart(),
+        ),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false, //To remove DEBUG banner

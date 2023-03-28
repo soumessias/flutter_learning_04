@@ -32,7 +32,7 @@ class ProductDetailPage extends StatelessWidget {
               ),
             ),
             Text(
-              product.title,
+              product.name,
               style: const TextStyle(
                 fontSize: 15,
                 color: Colors.white,
