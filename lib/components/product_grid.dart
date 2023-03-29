@@ -6,6 +6,8 @@ import '../models/product.dart';
 import '../models/product_list.dart';
 import 'package:badges/badges.dart' as badges;
 
+import '../utils/app_routes.dart';
+
 class ProductGrid extends StatelessWidget {
   const ProductGrid({super.key});
 
@@ -45,7 +47,7 @@ class ProductGrid extends StatelessWidget {
             ),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 right: 20,
               ),
               height: 95,
@@ -87,12 +89,19 @@ class ProductGrid extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    badgeStyle: const badges.BadgeStyle(
+                    badgeStyle: badges.BadgeStyle(
                       badgeColor: Colors.redAccent,
-                      padding: EdgeInsets.all(7),
+                      padding: cart.itemsCount.toInt() != 1
+                          ? EdgeInsets.all(7)
+                          : EdgeInsets.all(10),
                     ),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(
+                          AppRoutes.cartPage,
+                          // arguments: product,
+                        );
+                      },
                       icon: const Icon(
                         Icons.shopping_cart,
                         size: 27,
@@ -105,16 +114,16 @@ class ProductGrid extends StatelessWidget {
             ),
           ],
         ),
-        Container(
+        SizedBox(
           height: 742,
           width: double.infinity,
           child: ListView.separated(
             itemCount: loadedProducts.length,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             itemBuilder: ((context, index) {
               return ChangeNotifierProvider.value(
                 value: loadedProducts[index],
-                child: ProductItem(),
+                child: const ProductItem(),
               );
             }),
             separatorBuilder: (context, index) => const SizedBox(

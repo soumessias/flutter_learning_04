@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../models/product.dart';
 
 class ProductItem extends StatelessWidget {
+  const ProductItem({super.key});
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context);
@@ -14,7 +15,7 @@ class ProductItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).pushNamed(
-          AppRoutes.PRODUCT_DETAIL,
+          AppRoutes.productDetail,
           arguments: product,
         );
       },
@@ -134,6 +135,5 @@ class ProductItem extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

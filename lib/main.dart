@@ -1,4 +1,5 @@
 import 'package:app_04/models/cart.dart';
+import 'package:app_04/pages/cart_page.dart';
 import 'package:app_04/pages/product_detail_page.dart';
 import 'package:app_04/utils/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -29,11 +30,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false, //To remove DEBUG banner
         theme: ThemeData(
           primarySwatch: Colors.blue,
-          fontFamily: 'RepublicaMinor',
+          fontFamily: 'Arial',
         ),
-        home: ProductsOverviewPage(),
+        home: const ProductsOverviewPage(),
         routes: {
-          AppRoutes.PRODUCT_DETAIL: (ctx) => const ProductDetailPage(),
+          AppRoutes.productDetail: (ctx) => const ProductDetailPage(),
+          AppRoutes.cartPage: (ctx) => const CartPage(),
         },
       ),
     );

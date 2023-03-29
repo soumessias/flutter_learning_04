@@ -11,6 +11,8 @@ In it I learned about:
 * How to use Provider to easily deal with states in different components
 * How to use PopUpMenuButton and Items
 * How to use the Badges Package to create a badge on the shopping cart Icon
+* How to use Chip Widget
+* How to combine Card with ListTile
 
 Some screenshots:
 
