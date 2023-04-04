@@ -1,3 +1,4 @@
+import 'package:app_04/models/order_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -83,7 +84,14 @@ class CartPage extends StatelessWidget {
                     style: TextButton.styleFrom(
                       foregroundColor: Colors.redAccent,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Provider.of<OrderList>(
+                        context,
+                        listen: false,
+                      ).addOrder(cart);
+
+                      cart.clear();
+                    },
                     child: const Text(
                       'Comprar',
                       style: TextStyle(
