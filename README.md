@@ -1,4 +1,4 @@
-# E-commerce da Growth Suplementos (WIP)
+# E-commerce da Growth Suplementos
 
 My fourth app made with Dart/Flutter! 🚀
 
@@ -17,6 +17,6 @@ In it I learned about:
 
 Some screenshots:
 
-Lorem Ipsum               | Lorem Ipsum                | Lorem Ipsum               | Lorem Ipsum               | Lorem Ipsum
+Home Screen               | Drawer                     | Cart Screen               | Order Screen              | Product Detail Screen
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="" width="200">  |  <img src="" width="200"> | <img src="" width="200"> | <img src="" width="200"> | <img src="" width="200">
+<img src="https://github.com/soumessias/flutter_learning_04/blob/master/screenshots/01.png" width="200">  |  <img src="https://github.com/soumessias/flutter_learning_04/blob/master/screenshots/02.png" width="200"> | <img src="https://github.com/soumessias/flutter_learning_04/blob/master/screenshots/03.png" width="200"> | <img src="https://github.com/soumessias/flutter_learning_04/blob/master/screenshots/04.png" width="200"> | <img src="https://github.com/soumessias/flutter_learning_04/blob/master/screenshots/05.png" width="200">

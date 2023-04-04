@@ -27,10 +27,10 @@ class ProductGrid extends StatelessWidget {
     final provider = Provider.of<ProductList>(context);
     final List<Product> loadedProducts = provider.items;
     final cart = Provider.of<Cart>(context);
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
-      key: _scaffoldKey,
-      endDrawerEnableOpenDragGesture: false,
+      key: scaffoldKey,
+      drawer: const AppDrawer(),
       body: Column(
         children: [
           Stack(
@@ -61,14 +61,15 @@ class ProductGrid extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     IconButton(
-                        onPressed: () {
-                          _scaffoldKey.currentState?.openDrawer();
-                        },
-                        icon: const Icon(
-                          Icons.menu,
-                          color: Colors.white,
-                          size: 40,
-                        )),
+                      onPressed: () {
+                        scaffoldKey.currentState?.openDrawer();
+                      },
+                      icon: const Icon(
+                        Icons.menu,
+                        color: Colors.white,
+                        size: 40,
+                      ),
+                    ),
                     const SizedBox(
                       width: 220,
                     ),
@@ -80,13 +81,25 @@ class ProductGrid extends StatelessWidget {
                         size: 35,
                       ),
                       itemBuilder: (_) => [
-                        PopupMenuItem(
+                        const PopupMenuItem(
                           value: true,
-                          child: menuItem("Somente Favoritos"),
+                          child: Text(
+                            "Somente Favoritos",
+                            style: TextStyle(
+                              color: Color.fromRGBO(0, 158, 223, 1),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
-                        PopupMenuItem(
+                        const PopupMenuItem(
                           value: false,
-                          child: menuItem("Todos"),
+                          child: Text(
+                            "Todos",
+                            style: TextStyle(
+                              color: Color.fromRGBO(0, 158, 223, 1),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ],
                       onSelected: (bool selected) {
@@ -150,7 +163,6 @@ class ProductGrid extends StatelessWidget {
           ),
         ],
       ),
-      drawer: const AppDrawer(),
     );
   }
 }

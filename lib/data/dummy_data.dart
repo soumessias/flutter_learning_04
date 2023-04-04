@@ -3,7 +3,7 @@ import '../models/product.dart';
 final dummyProducts = [
   Product(
     id: 'p1',
-    name: 'WHEY PROTEIN CONCENTRADO (1KG)',
+    name: 'WHEY PROTEIN CONCENTRADO',
     description:
         'Whey Protein Growth é a proteína ideal para quem treina hipertrofia e quer ganhar massa muscular.',
     price: 99.00,
@@ -12,7 +12,7 @@ final dummyProducts = [
   ),
   Product(
     id: 'p2',
-    name: 'CREATINA MONOHIDRATADA 100G',
+    name: 'CREATINA MONOHIDRATADA',
     description:
         'Este produto é uma das principais escolhas dos atletas mais famosos e de quem está investindo na hipertrofia. Você consegue ganhar massa muscular e, ao mesmo tempo, garantir um ganho de força sem igual.',
     price: 40.50,
@@ -30,7 +30,7 @@ final dummyProducts = [
   ),
   Product(
     id: 'p4',
-    name: 'PASTA DE AMENDOIM SABOR BEIJINHO 500G',
+    name: 'PASTA DE AMENDOIM SABOR BEIJINHO',
     description:
         'A Pasta de Amendoim Beijinho é um alimento energético, devido ao amendoim, que possui gorduras, carboidratos e proteínas (sendo fonte de aminoácidos essenciais como leucina, isoleucina, valina), vitaminas (B e E), minerais (zinco, potássio e fósforo), entre outros nutrientes essenciais para o bom funcionamento do organismo.',
     price: 25.20,

@@ -16,7 +16,12 @@ class AppDrawer extends StatelessWidget {
               color: Color.fromRGBO(0, 158, 223, 1),
             ),
             child: Text(
-              'Bem Vindo Usuário!',
+              'Bem Vindo Messias!',
+              style: TextStyle(
+                fontSize: 30,
+                fontFamily: 'RepublicaMinor',
+                color: Colors.white,
+              ),
             ),
           ),
           const Divider(),

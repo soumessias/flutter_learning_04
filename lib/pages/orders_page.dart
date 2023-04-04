@@ -1,12 +1,19 @@
-import 'package:app_04/utils/app_routes.dart';
+import 'package:app_04/components/app_drawer.dart';
+import 'package:app_04/components/order.dart';
+import 'package:app_04/models/order_list.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class OrdersPage extends StatelessWidget {
   const OrdersPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+    final OrderList orders = Provider.of<OrderList>(context);
     return Scaffold(
+      key: scaffoldKey,
+      drawer: const AppDrawer(),
       body: Column(
         children: [
           Container(
@@ -20,27 +27,38 @@ class OrdersPage extends StatelessWidget {
               color: Color.fromRGBO(0, 158, 223, 1),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(
+                  alignment: Alignment.centerLeft,
                   onPressed: () {
-                    Navigator.of(context).pushReplacementNamed(AppRoutes.home);
+                    scaffoldKey.currentState?.openDrawer();
                   },
                   icon: const Icon(
-                    Icons.arrow_back_ios_new,
+                    Icons.menu,
                     color: Colors.white,
+                    size: 40,
                   ),
+                ),
+                const SizedBox(
+                  width: 95,
                 ),
                 const Text(
                   'Pedidos',
-                  style: const TextStyle(
-                    fontSize: 15,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 30,
                     color: Colors.white,
                   ),
                 ),
               ],
             ),
           ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: orders.itemsCount,
+              itemBuilder: (ctx, i) => OrderWidget(order: orders.items[i]),
+            ),
+          )
         ],
       ),
     );

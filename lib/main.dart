@@ -34,12 +34,10 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false, //To remove DEBUG banner
         theme: ThemeData(
-            primarySwatch: Colors.blue,
-            fontFamily: 'Arial',
-            // canvasColor: Color.fromRGBO(0, 158, 223, 1),
-            drawerTheme: DrawerThemeData(
-              scrimColor: Color.fromRGBO(0, 158, 223, 0.3),
-            )),
+          primarySwatch: Colors.blue,
+          fontFamily: 'Arial',
+          // canvasColor: Color.fromRGBO(0, 158, 223, 1),
+        ),
         routes: {
           AppRoutes.home: (ctx) => const ProductsOverviewPage(),
           AppRoutes.productDetail: (ctx) => const ProductDetailPage(),
