@@ -1,5 +1,5 @@
 import 'package:app_04/components/app_drawer.dart';
-import 'package:app_04/components/product_item.dart';
+import 'package:app_04/components/product_grid_item.dart';
 import 'package:app_04/models/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -153,7 +153,7 @@ class ProductGrid extends StatelessWidget {
               itemBuilder: ((context, index) {
                 return ChangeNotifierProvider.value(
                   value: loadedProducts[index],
-                  child: const ProductItem(),
+                  child: const ProductGridItem(),
                 );
               }),
               separatorBuilder: (context, index) => const SizedBox(
